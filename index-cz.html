@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Novák & Partneři – Advokátní kancelář</title>
+  <meta name="description" content="Moderní právní servis pro firmy i jednotlivce. Obchodní právo, nemovitosti, pracovní a rodinné právo. První konzultace nezávazně." />
+  <meta name="theme-color" content="#0e4e8a" />
+  <meta property="og:title" content="Novák & Partneři – Advokátní kancelář" />
+  <meta property="og:description" content="Moderní právní servis pro firmy i jednotlivce. První konzultace nezávazně." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="cs_CZ" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#0e4e8a; --brand-600:#0b3f6f; --accent:#d4af37; --bg:#f7f9fc;
+      --card:#ffffff; --text:#0f172a; --muted:#475569; --radius:18px;
+      --shadow:0 10px 25px rgba(2,6,23,.08);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto; color:var(--text); background:var(--bg)}
+    a{color:inherit;text-decoration:none} img{max-width:100%; display:block}
+    .container{width:min(1100px, 92%); margin-inline:auto}
+    .btn{display:inline-flex; align-items:center; gap:.6rem; background:var(--brand); color:#fff; padding:.9rem 1.2rem; border-radius:999px; font-weight:600; box-shadow:var(--shadow); transition:transform .15s ease, background .2s}
+    .btn:hover{background:var(--brand-600); transform:translateY(-1px)}
+    .btn-outline{background:transparent; color:var(--brand); border:2px solid var(--brand);}
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(8px); background:rgba(247,249,252,.7); border-bottom:1px solid rgba(15,23,42,.06)}
+    .topbar{background:var(--brand); color:#fff; font-size:.9rem}
+    .topbar .container{display:flex; justify-content:space-between; padding:.4rem 0}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:.8rem 0}
+    .logo{display:flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.3px}
+    .logo-mark{width:36px;height:36px; border-radius:10px; display:grid; place-items:center; background:var(--brand); color:#fff}
+    .nav ul{display:flex; list-style:none; gap:1.2rem; margin:0; padding:0}
+    .nav a{color:var(--muted); font-weight:600} .nav a:hover{color:var(--text)}
+    .mobile-toggle{display:none; background:transparent; border:none; font-size:1.7rem}
+    .hero{padding:clamp(3rem, 7vw, 6rem) 0; background:linear-gradient(180deg, #fff, #eef5ff)}
+    .hero .grid{display:grid; grid-template-columns:1.2fr 1fr; gap:2rem; align-items:center}
+    .eyebrow{color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.12em; font-size:.9rem}
+    h1{font-family:"Playfair Display", serif; font-size:clamp(2rem, 4vw + .5rem, 3.2rem); margin:.5rem 0 1rem}
+    .lead{font-size:1.05rem; color:var(--muted); line-height:1.7}
+    .cta-row{display:flex; gap:.8rem; margin-top:1.2rem; flex-wrap:wrap}
+    .section{padding:clamp(2.5rem, 6vw, 4.5rem) 0}
+    .section h2{font-family:"Playfair Display", serif; font-size:2rem; margin:0 0 1rem}
+    .muted{color:var(--muted)}
+    .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem}
+    .card{background:var(--card); border-radius:var(--radius); padding:1.2rem; box-shadow:var(--shadow); border:1px solid rgba(15,23,42,.05)}
+    .card h3{margin:.6rem 0 .3rem; font-size:1.15rem}
+    .icon{width:40px;height:40px; border-radius:10px; background:#eef5ff; display:grid; place-items:center}
+    .kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:1rem}
+    .kpi{background:var(--card); border-radius:var(--radius); padding:1.2rem; text-align:center; box-shadow:var(--shadow)}
+    .kpi strong{font-size:1.6rem; display:block}
+    .team{display:grid; grid-template-columns:repeat(2,1fr); gap:1rem}
+    .person{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; border:1px solid rgba(15,23,42,.06)}
+    .person .info{padding:1rem}
+    .person .role{color:var(--muted); font-size:.95rem}
+    .testimonials{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem}
+    .quote{background:var(--card); border:1px solid rgba(15,23,42,.06); border-radius:var(--radius); padding:1rem; box-shadow:var(--shadow)}
+    .quote p{margin:.5rem 0}
+    details{background:var(--card); border-radius:var(--radius); padding:1rem; border:1px solid rgba(15,23,42,.06)}
+    details+details{margin-top:.6rem} summary{font-weight:600; cursor:pointer}
+    .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
+    form{background:var(--card); border:1px solid rgba(15,23,42,.06); border-radius:var(--radius); padding:1rem; box-shadow:var(--shadow)}
+    .field{display:flex; flex-direction:column; gap:.3rem; margin-bottom:.8rem}
+    label{font-weight:600}
+    input, select, textarea{border:1px solid rgba(15,23,42,.12); border-radius:12px; padding:.8rem; font:inherit; background:#fff}
+    input:focus, select:focus, textarea:focus{outline:none; box-shadow:0 0 0 3px rgba(13,110,253,.25)}
+    .help{font-size:.9rem; color:var(--muted)}
+    .map{border:0; width:100%; height:100%; min-height:320px; border-radius:var(--radius); box-shadow:var(--shadow)}
+    footer{background:#0b1220; color:#cbd5e1; padding:2rem 0; margin-top:2rem}
+    .footer-grid{display:grid; grid-template-columns:2fr 1fr 1fr; gap:1rem}
+    .footer-title{color:#fff; font-weight:700; margin-bottom:.6rem}
+    .footnote{border-top:1px solid rgba(255,255,255,.08); margin-top:1rem; padding-top:1rem; font-size:.9rem}
+    .center{display:grid; place-items:center}
+    .badge{display:inline-block; background:rgba(212,175,55,.18); color:#6b550f; padding:.2rem .5rem; border-radius:999px; font-size:.8rem; font-weight:700}
+    @media (max-width: 900px){
+      .hero .grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      .kpis{grid-template-columns:1fr 1fr}
+      .team{grid-template-columns:1fr}
+      .testimonials{grid-template-columns:1fr 1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .nav ul{display:none}
+      .mobile-toggle{display:block}
+    }
+    @media (max-width: 600px){
+      .cards{grid-template-columns:1fr}
+      .kpis{grid-template-columns:1fr}
+      .testimonials{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+    }
+    .lang-switch{margin-left:1rem; font-weight:600}
+    .lang-switch a{margin:0 .25rem; text-decoration:none}
+    .lang-switch a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="container">
+        <div>📞 <a href="tel:+420123456789" aria-label="Zavolat">+420 123 456 789</a></div>
+        <div>✉️ <a href="mailto:info@novak-partneri.cz">info@novak-partneri.cz</a></div>
+      </div>
+    </div>
+    <nav class="container nav" aria-label="Hlavní navigace">
+      <a class="logo" href="#home" aria-label="Domů">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 18V6l12 12V6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span>Novák &amp; Partneři</span>
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Otevřít menu">☰</button>
+      <ul id="navLinks">
+        <li><a href="#sluzby">Služby</a></li>
+        <li><a href="#proc">Proč my</a></li>
+        <li><a href="#tym">Tým</a></li>
+        <li><a href="#reference">Reference</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a class="btn" href="#kontakt">Nezávazná konzultace</a></li>
+      </ul>
+      <div class="lang-switch">
+        <a href="index-cz.html">🇨🇿 CZ</a> | <a href="index-en.html">🇬🇧 EN</a>
+      </div>      
+    </nav>
+  </header>
+
+  <main id="home">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container grid">
+        <div>
+          <div class="eyebrow">Advokátní kancelář</div>
+          <h1>Moderní právní servis pro firmy i jednotlivce</h1>
+          <p class="lead">Specializujeme se na <strong>obchodní právo</strong>, <strong>nemovitosti</strong>, <strong>pracovní</strong> a <strong>rodinné právo</strong>. Mluvíme srozumitelně, postupujeme rychle a s maximální diskrétností.</p>
+          <div class="cta-row">
+            <a class="btn" href="#kontakt">Domluvit konzultaci</a>
+            <a class="btn btn-outline" href="#sluzby">Naše služby</a>
+          </div>
+          <p class="muted" style="margin-top:.6rem"><span class="badge">První 20 min zdarma</span></p>
+        </div>
+        <div class="center">
+          <img src="https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?q=80&w=1200&auto=format&fit=crop" alt="Právník a klient při konzultaci" style="border-radius:var(--radius); box-shadow:var(--shadow);" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SLUZBY -->
+    <section id="sluzby" class="section">
+      <div class="container">
+        <h2>Naše služby</h2>
+        <p class="muted">Kompletní právní podpora od první konzultace po zastupování u soudu.</p>
+        <div class="cards" style="margin-top:1rem">
+          <article class="card"><div class="icon">⚖️</div><h3>Obchodní právo</h3><p class="muted">Zakládání společností, smlouvy, M&A, compliance a korporátní agenda.</p></article>
+          <article class="card"><div class="icon">🏠</div><h3>Nemovitosti</h3><p class="muted">Kupní a nájemní smlouvy, úschova, due diligence, katastrální řízení.</p></article>
+          <article class="card"><div class="icon">👨‍👩‍👧</div><h3>Rodinné právo</h3><p class="muted">Rozvody, péče o děti, výživné, předmanželské smlouvy, majetkové vypořádání.</p></article>
+          <article class="card"><div class="icon">🧑‍💼</div><h3>Pracovní právo</h3><p class="muted">Pracovní smlouvy, ukončení, spory, interní směrnice a ochrana zaměstnavatele.</p></article>
+          <article class="card"><div class="icon">💼</div><h3>Vymáhání pohledávek</h3><p class="muted">Předžalobní výzvy, soudní řízení, exekuce a dohody o splátkách.</p></article>
+          <article class="card"><div class="icon">🛡️</div><h3>Trestní obhajoba</h3><p class="muted">Obhajoba v přípravném řízení i před soudy, práva poškozených.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROC MY -->
+    <section id="proc" class="section" style="background:#fff">
+      <div class="container">
+        <h2>Proč právě my</h2>
+        <div class="kpis">
+          <div class="kpi"><strong>15+</strong><span class="muted">let praxe</span></div>
+          <div class="kpi"><strong>1 200+</strong><span class="muted">vyřešených případů</span></div>
+          <div class="kpi"><strong>98%</strong><span class="muted">spokojených klientů</span></div>
+          <div class="kpi"><strong>24 h</strong><span class="muted">rychlá reakce</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYM -->
+    <section id="tym" class="section">
+      <div class="container">
+        <h2>Náš tým</h2>
+        <p class="muted">Zkušení advokáti a daňoví poradci s důrazem na detail a srozumitelnou komunikaci.</p>
+        <div class="team" style="margin-top:1rem">
+          <article class="person">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="Portrét – Mgr. Petra Svobodová, advokátka">
+            <div class="info"><h3>Mgr. Petra Svobodová</h3><div class="role">Partner | Obchodní právo, nemovitosti</div></div>
+          </article>
+          <article class="person">
+            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=1200&auto=format&fit=crop" alt="Portrét – JUDr. Jan Novák, advokát">
+            <div class="info"><h3>JUDr. Jan Novák</h3><div class="role">Partner | Pracovní a rodinné právo</div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERENCE -->
+    <section id="reference" class="section" style="background:#fff">
+      <div class="container">
+        <h2>Reference klientů</h2>
+        <div class="testimonials" style="margin-top:1rem">
+          <blockquote class="quote"><p>„Měli jsme složitý spor z oblasti pracovního práva a kancelář vše vyřešila rychle a profesionálně.“</p><p class="muted">— HR Manager, Tech s.r.o.</p></blockquote>
+          <blockquote class="quote"><p>„Skvělý servis při koupi nemovitosti – bezpečná úschova i komunikace s katastrem.“</p><p class="muted">— Jana K.</p></blockquote>
+          <blockquote class="quote"><p>„Cením si hlavně srozumitelného vysvětlení a jasného postupu v každém kroku.“</p><p class="muted">— Petr D.</p></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="container">
+        <h2>Nejčastější dotazy</h2>
+        <details><summary>Kolik stojí úvodní konzultace?</summary><p>Prvních 20 minut je nezávazně zdarma. Následná sazba se odvíjí od typu služby, obvykle 2 500–3 500 Kč/hod.</p></details>
+        <details><summary>Jak rychle se vám ozveme?</summary><p>Standardně odpovídáme do 24 hodin v pracovních dnech. U urgentních případů rychleji.</p></details>
+        <details><summary>Zajišťujete advokátní úschovu?</summary><p>Ano, poskytujeme bezpečnou advokátní úschovu peněz i listin dle advokátních předpisů.</p></details>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="section" style="background:#fff">
+      <div class="container">
+        <h2>Kontakt</h2>
+        <div class="contact-grid" style="margin-top:1rem">
+          <form id="contactForm" novalidate>
+            <div class="field"><label for="jmeno">Jméno a příjmení</label><input id="jmeno" name="jmeno" type="text" autocomplete="name" required aria-required="true" placeholder="Např. Jana Nováková" /></div>
+            <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required aria-required="true" placeholder="napr@domena.cz" /></div>
+            <div class="field"><label for="telefon">Telefon (volitelné)</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" placeholder="+420 123 456 789" /></div>
+            <div class="field"><label for="tema">Téma</label><select id="tema" name="tema" required><option value="" disabled selected>Vyberte…</option><option>Obchodní právo</option><option>Nemovitosti</option><option>Pracovní právo</option><option>Rodinné právo</option><option>Jiné</option></select></div>
+            <div class="field"><label for="zprava">Vaše zpráva</label><textarea id="zprava" name="zprava" rows="6" placeholder="Stručně popište svůj případ…" required></textarea><div class="help">Odpovíme do 24 hodin.</div></div>
+            <div class="field" style="align-items:start; gap:.6rem"><input id="souhlas" type="checkbox" required /><label for="souhlas" style="font-weight:400">Souhlasím se zpracováním osobních údajů pro účely vyřízení poptávky. <a href="#">Zásady ochrany osobních údajů</a>.</label></div>
+            <button class="btn" type="submit">Odeslat poptávku</button>
+            <p id="formMsg" class="help" role="status" aria-live="polite" style="margin-top:.6rem"></p>
+          </form>
+          <iframe class="map" title="Kancelář – mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.841930566052!2d14.42076!3d50.08804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDA1JzE2LjkiTiAxNMKwMjUnMTQuNyJF!5e0!3m2!1scs!2scz!4v0000000000"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><div class="footer-title">Novák &amp; Partneři</div><p>Váš spolehlivý partner v právu. Zastupujeme vás s nasazením a respektem k vašemu času.</p></div>
+      <div><div class="footer-title">Kontakt</div><p>Václavské náměstí 1, Praha 1<br>+420 123 456 789<br><a href="mailto:info@novak-partneri.cz">info@novak-partneri.cz</a></p></div>
+      <div><div class="footer-title">Právní</div><p><a href="#">Zásady ochrany osobních údajů</a><br><a href="#">VOP</a><br><a href="#">Impressum</a></p></div>
+    </div>
+    <div class="container footnote">© <span id="year"></span> Novák &amp; Partneři. Všechna práva vyhrazena.</div>
+  </footer>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Novák & Partneři",
+    "url": "https://novak-partneri.cz/",
+    "areaServed": "CZ",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Václavské náměstí 1",
+      "addressLocality": "Praha",
+      "postalCode": "110 00",
+      "addressCountry": "CZ"
+    },
+    "telephone": "+420123456789",
+    "email": "info@novak-partneri.cz",
+    "priceRange": "$$$",
+    "openingHours": "Mo-Fr 09:00-17:00"
+  }
+  </script>
+
+  <script>
+    // Rok ve footeru
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobilní menu
+    const toggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    toggle?.addEventListener('click', () => {
+      const visible = getComputedStyle(navLinks).display !== 'none';
+      navLinks.style.display = visible ? 'none' : 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.gap = '1rem';
+      navLinks.style.background = 'rgba(255,255,255,.95)';
+      navLinks.style.position = 'absolute';
+      navLinks.style.top = '64px';
+      navLinks.style.right = '4%';
+      navLinks.style.padding = '1rem';
+      navLinks.style.border = '1px solid rgba(15,23,42,.08)';
+      navLinks.style.borderRadius = '16px';
+      navLinks.style.boxShadow = 'var(--shadow)';
+    });
+
+    // Odeslání formuláře (Formspree / fallback)
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('formMsg');
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      msg.textContent = 'Odesílám…';
+      try {
+        // Nahraďte URL svým Formspree endpointem
+        const endpoint = 'https://formspree.io/f/YOUR_FORM_ID';
+        const res = await fetch(endpoint, { method:'POST', headers:{'Accept':'application/json'}, body:new FormData(form) });
+        if(res.ok){
+          msg.textContent = 'Děkujeme, zpráva byla odeslána. Ozveme se co nejdříve.';
+          form.reset();
+        } else {
+          msg.textContent = 'Omlouváme se, něco se nepovedlo. Napište nám prosím přímo na info@novak-partneri.cz';
+        }
+      } catch(err){
+        msg.textContent = 'Nelze se připojit. Zkuste to prosím později nebo napište na info@novak-partneri.cz';
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
